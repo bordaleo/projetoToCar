@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+{% load crispy_forms_tags %}
+
+{% block title %}Adicione um Carro{% endblock %}
+
+{% block content %}
+<div class="form-card">
+    <h1 class="mb-4 text-center">Adicione seu carro:</h1>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success w-100">Adicionar Carro</button>
+    </form>
+</div>
+{% endblock %}
